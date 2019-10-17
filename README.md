@@ -18,14 +18,14 @@ please upload the code into a GitHub Repository-> Make the link Public-> Share t
 formal discussion with the hiring manager would be pending. 
 
 
-devops-code-challenge-2016
+Devops-code-challenge-2016
 Royal C. Jackson Jr.
 Will Submit all Three Challenges
 People10 Technologies\devops-code-challenge
 
 Github Public Repo
 people10.docker.redvulture.github.io
-URL: 
+URL: https://github.com/GitHubShark39/people10.docker.redvulture.github.io/blob/master/README.md
 
 
 ## Introduction
