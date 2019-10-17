@@ -1,0 +1,56 @@
+
+
+Pebble Java EE blogging tool.txt
+PebbleA lightweight, open source, Java EE blogging tool
+
+http://pebble.sourceforge.net/
+
+Overview
+What is Pebble?
+Pebble is a lightweight, open source, Java EE blogging tool. It's small, fast and feature-rich with unrivalled ease of installation and use. Blog content is stored as XML files on disk and served up dynamically, so there's no need to install a database. All maintenance and administration can be performed through your web browser, making Pebble ideal for anybody who is constantly on the move or doesn't have direct access to their host. You can see example blogs here and here.
+
+Download now and you can be blogging in less than 5 minutes.
+
+Quickstart with Tomcat
+Take the pebble.war file from the distribution and deploy it, by copying it to $TOMCAT_HOME/webapps.
+Restart Tomcat and point your browser to http://localhost:8080/pebble/.
+Start blogging by logging in with a username of username and a password of password.
+Minimum requirements
+Java 6.0
+A JSP 2.0/Servlet 2.4 compatible web/application server such as Apache Tomcat 6
+
+Installation
+How do I deploy Pebble?
+Installation on most JSP 2.0/Servlet 2.4 containers should be as simple as dropping the pebble.war file into a specific directory in order to deploy it. Here are the steps required to deploy Pebble into Tomcat 5.5.x.
+
+Take the pebble.war file from the distribution and deploy it, by copying it to $TOMCAT_HOME/webapps.
+Restart Tomcat and point your browser to http://localhost:8080/pebble/.
+Start blogging by logging in with a username of username and a password of password.
+What follows are some instructions for specific web/application servers.
+
+Tomcat 5.5.x
+To enable e-mail integration so that Pebble can send e-mails whenever people leave comments, copy the activation.jar and mail.jar files from the lib directory of the Pebble distribution into $TOMCAT_HOME/common/lib/.
+
+
+Configuration
+What do I need to configure?
+There are several pieces of information that you may want to configure with Pebble, all of which are specified in the /WEB-INF/pebble.properties file.
+
+Data directory (dataDirectory) : the location where your Pebble data is stored. The default is $user.home/pebble, and this directory is created automatically if it doesn't exist. If running as a secure user under *nix, the value of $user.home may point to /dev/null so be sure to check and change the data directory property as appropriate.
+URL (url) : the URL (starting http:// or https://) where your blog is hosted. The default value is blank, which means "auto-discover at runtime".
+Secure URL (secureUrl) : the secure URL (starting https://), which should only be set if you intend to use secure login.
+Multi-blog (multiBlog) : a flag to indicate whether Pebble is running in multi-blog mode, default is false.
+SMTP host (smtpHost) : the name/IP address of the server through which e-mail is sent, or a JNDI name starting java:/comp/env pointing to a preconfigured javax.mail.Session instance. The default is java:comp/env/mail/Session.
+Maximum file upload size (fileUploadSize) : the maximum file upload size in KB.
+User themes enabled (userThemesEnabled) : a flag to indicate whether user themes are enabled, default is true. Set this value to false to ensure all blogs in a multi-blog installation use the default theme and look consistent.
+E-mail notifications
+To enable e-mail notifications using a JNDI based mail session, you'll need to follow these steps.
+
+Uncomment the JavaMail resource reference at the bottom of the Pebble web.xml file.
+Ensure the JavaMail libraries are installed into your web/application server.
+Configure the JavaMail session in your web/application server.
+See Installation for instructions related to specific web/application servers.
+
+Logging
+Out-of-the-box, Pebble uses log4j (via Jakarta Commons logging) and logs everything from INFO and above to a file called pebble.log in the directory where the web/application server is started from. To alter this, open the WEB-INF/classes/log4j.properties file and edit as appropriate.
+

@@ -1,0 +1,21 @@
+---
+# The variables file used by the playbooks in the dbservers group.
+# These don't have to be explicitly imported by vars_files: they are autopopulated.
+
+# mysqlservice: mysqld
+# mysql_port: 3306
+# dbuser: foouser
+# dbname: foodb
+# upassword: abc
+
+mysqlservice: mysqld
+mysql_port: 3307
+dbuser: "Walter White"
+dbname: developmentdb
+upassword: "Wh@tsmyN@m3?"
+
+mysqlservice: mysqld
+mysql_port: 3308
+dbuser: "Walter White"
+dbname: productiondb
+upassword: "Wh@tsmyN@m3?"
